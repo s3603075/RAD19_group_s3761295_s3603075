@@ -9,7 +9,7 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
-gem 'bootstrap-sass', '3.3.6'
+gem 'bootstrap-sass'
 gem 'popper_js'
 
 group :development, :test do

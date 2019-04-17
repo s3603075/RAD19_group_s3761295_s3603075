@@ -10,13 +10,13 @@ Rails.application.routes.draw do
 
   get 'location/loc14_10_30', to: 'location#loc14_10_30'
 
-  get 'category/web_dev'
+  get 'category/Web_Development'
 
-  get 'category/java'
+  get 'category/Java'
 
-  get 'category/ios', to: 'category#ios'
+  get 'category/IOS_Engineering'
 
-  get 'category/full_stack_dev'
+  get 'category/Full_Stack_Dev'
 
   get 'main/home'
 

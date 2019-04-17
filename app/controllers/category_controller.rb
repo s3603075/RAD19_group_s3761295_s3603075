@@ -1,13 +1,13 @@
 class CategoryController < ApplicationController
-  def full_stack_dev
+  def Full_Stack_Dev
   end
   
-  def web_dev
+  def Web_Development
   end
   
-  def ios
+  def IOS_Engineering
   end
   
-  def java
+  def Java
   end
 end

@@ -101,3 +101,6 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+ul ul { display: none }
+ul li:hover ul { display: block; }
