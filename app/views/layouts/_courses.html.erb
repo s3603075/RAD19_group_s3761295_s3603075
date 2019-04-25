@@ -17,7 +17,7 @@
       <div class="content"><b>Prerequisite: </b><%= course_details.prerequisite %></div>
       <div class="content"><b>Category: </b><%= link_to "#{course_details.category}", categoryPath(course_details.category.gsub(" ", "_")) %></div>
       <div class="content "><b>Location: </b>
-        <% Location.joins(:courses).where("course_name= \"#{course_details.course_name}\"").each do |location| %>
+        <% Location.joins(:courses).where("course_name= \'#{course_details.course_name}\'").each do |location| %>
           <div class="link"><%= link_to "#{location.location_name}", locationPath(location.location_name.gsub(".", "_")) %></div>
         <% end %>
 
