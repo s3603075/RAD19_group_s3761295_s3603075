@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190425072107) do
+ActiveRecord::Schema.define(version: 20190425165423) do
 
   create_table "courses", force: :cascade do |t|
     t.string "course_name"
@@ -37,23 +37,3 @@ ActiveRecord::Schema.define(version: 20190425072107) do
   end
 
 end
-
-Course.new(id: 1, course_name: "Rapid Application Development", prerequisite: "Web Programming", coordinator_name: "Andy Song", category: "Web Development").save
-Course.new(id: 2, course_name: "Capstone Project", prerequisite: "Advanced Programming", coordinator_name: "Ali Yavari", category: "Full Stack Dev").save
-Course.new(id: 3, course_name: "Advanced iOS/OSX Programming", prerequisite: "3 years iOS or relevant experience", coordinator_name: "Alex Jiang", category: "iOS Engineering").save
-Course.new(id: 4, course_name: "Java for Programmers", prerequisite: "Software Engineering Fundmentals", coordinator_name: "Andy Song", category: "Java").save
-Course.new(id: 5, course_name: "Advanced Programming", prerequisite: "Basic Programming", coordinator_name: "Andy Song", category: "Java").save
-
-Location.new(location_name:"14.10.30").save
-Location.new(location_name:"14.10.31").save
-Location.new(location_name:"14.08.26").save
-
-CourseLocation.new(course_id: 1, location_id: 3).save
-CourseLocation.new(course_id: 1, location_id: 2).save
-CourseLocation.new(course_id: 2, location_id: 2).save
-CourseLocation.new(course_id: 3, location_id: 1).save
-CourseLocation.new(course_id: 4, location_id: 1).save
-CourseLocation.new(course_id: 4, location_id: 2).save
-CourseLocation.new(course_id: 5, location_id: 1).save
-CourseLocation.new(course_id: 5, location_id: 3).save
-
