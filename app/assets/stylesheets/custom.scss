@@ -1,6 +1,67 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar-nav  a, .navbar-nav  li {
+   color: white;
+ }
+
+.nav a:hover, .nav li:hover {
+  border-radius: 5px;
+  color: black;
+}
+
+.navbar {
+  background-color: #3E616E;
+}
+
+.media {
+  position: center;
+  padding-bottom:40px;
+  padding-top:10px;
+}
+
+.media-left {
+  height: 200px;
+  width: 200px;
+}
+
+.media-body {
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  width: 550px;
+  padding: 20px;
+
+}
+
+.media:not(:last-child) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+
+.btn-secondary {
+  color: #fff;
+
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-secondary {
+
+  background-color: #d3d6d0;
+  border-color: #d3d6d0; /*set the color you want here*/
+}
+
+.content {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+h4 {
+  padding-bottom: 6px;
+}
+
+.link{
+  display:inline;
+  padding-right: 15px;
+}
+
 /* universal */
 
 body {
@@ -46,10 +107,6 @@ h2 {
   color: #777;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
 
 /* header */
 

@@ -1,4 +1,3 @@
 class Course < ApplicationRecord
-  belongs_to :category
-  has_many :location
+  has_and_belongs_to_many :locations
 end

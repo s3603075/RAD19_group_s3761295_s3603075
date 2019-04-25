@@ -1,0 +1,30 @@
+<div class="container" role="navigation">
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Course</a></li>
+  <li role="presentation"><%= link_to "Coordinator", all_coordinators_path %></li>
+</ul>
+
+  <% Course.joins(:locations).where(whereCondition(yield :condition)).group("course_name").each do |course_details| %>
+    <div class="media ">
+    <div class="media-left media-middle">
+      <a href="#">
+        <img class="media-object" src="https://d33wubrfki0l68.cloudfront.net/f29dc9865845dd2e2c163996c42816237588b6df/d3f8b/assets/images/rails-logo.png" alt="...">
+      </a>
+    </div>
+
+    <div class="media-body">
+      <h4 class="media-heading"><%= course_details.course_name %></h4>
+      <div class="content"><b>Prerequisite: </b><%= course_details.prerequisite %></div>
+      <div class="content"><b>Category: </b><%= link_to "#{course_details.category}", categoryPath(course_details.category.gsub(" ", "_")) %></div>
+      <div class="content "><b>Location: </b>
+        <% Location.joins(:courses).where("course_name= \"#{course_details.course_name}\"").each do |location| %>
+          <div class="link"><%= link_to "#{location.location_name}", locationPath(location.location_name.gsub(".", "_")) %></div>
+        <% end %>
+
+      </div>
+      <small class="text-muted"><%= time_ago_in_words(course_details.created_at) %> ago</small>
+    </div>
+    </div>
+  <% end %>
+
+</div>

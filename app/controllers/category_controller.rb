@@ -5,7 +5,7 @@ class CategoryController < ApplicationController
   def Web_Development
   end
   
-  def IOS_Engineering
+  def iOS_Engineering
   end
   
   def Java

@@ -1,0 +1,6 @@
+<%# Course.select("DISTINCT(course_name)").where("location = \"14.10.30\"").each do |course_details| %>
+<% Course.select("distinct coordinator_name").each do |name| %>
+  <h1><%= name.coordinator_name %></h1>
+
+<% end %>
+
