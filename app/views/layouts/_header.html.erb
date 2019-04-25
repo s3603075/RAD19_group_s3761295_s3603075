@@ -8,7 +8,7 @@
             Category
           </a>
           <ul class="dropdown-menu">
-            <% Course.select("DISTINCT(category)").each do |c| %>
+            <% Course.select("category").group("category").each do |c| %>
               <li class="dropdown-item"><%= link_to "#{c.category}", categoryPath(c.category.gsub(" ", "_")) %></li>
             <% end %>
           </ul>
