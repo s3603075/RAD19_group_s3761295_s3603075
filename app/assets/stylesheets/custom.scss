@@ -14,18 +14,18 @@
   background-color: #3E616E;
 }
 
-.media {
+.media-container .media {
   position: center;
   padding-bottom:40px;
   padding-top:10px;
 }
 
-.media-left {
+.media-container .media .media-left {
   height: 200px;
   width: 200px;
 }
 
-.media-body {
+.media-container .media .media-body {
   border-radius: 5px;
   background-color: #e0e0e0;
   width: 550px;
@@ -33,14 +33,43 @@
 
 }
 
-.media:not(:last-child) {
+.media-container .media:not(:last-child) {
   border-bottom: 1px solid #e5e5e5;
+}
+
+.media {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.media-body {
+  width: 60%;
+}
+
+.media-body h4 {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+.media-body .btn-success {
+  margin-top: 15px;
 }
 
 
 .btn-secondary {
   color: #fff;
 
+}
+
+.jumbotron .btn-primary{
+  background-color: #88959b;
+  border-color: white;
+}
+
+.jumbotron .btn-primary:hover{
+  background-color: #405e95;
+  border-color: white;
 }
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-secondary {
 

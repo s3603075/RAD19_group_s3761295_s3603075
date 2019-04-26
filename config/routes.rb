@@ -4,15 +4,13 @@ Rails.application.routes.draw do
 
   get 'all/coordinators'
 
-  get 'course/mohammed'
-
   root 'main#home'
 
   get 'location/loc14_10_31'
 
   get 'location/loc14_08_26'
 
-  get 'location/loc14_10_30', to: 'location#loc14_10_30'
+  get 'location/loc14_10_30'
 
   get 'category/Web_Development'
 

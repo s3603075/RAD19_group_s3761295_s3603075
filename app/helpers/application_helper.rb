@@ -4,4 +4,5 @@ module ApplicationHelper
     return "location_name=" + "\'#{condition}\'" if controller.controller_name == "location"
     return condition
   end
+
 end

@@ -1,6 +1,10 @@
-<%# Course.select("DISTINCT(course_name)").where("location = \"14.10.30\"").each do |course_details| %>
-<% Course.select("distinct coordinator_name").each do |name| %>
-  <h1><%= name.coordinator_name %></h1>
+<div class="container" role="navigation">
+  <ul class="nav nav-tabs">
+    <li role="presentation"><%= link_to "Course", :back %></li>
+    <li role="presentation"  class="active"><%= link_to "Coordinator", all_coordinators_path %></li>
+  </ul>
+  <% Course.select("distinct coordinator_name").each do |name| %>
+    <h1><%= name.coordinator_name %></h1>
 
-<% end %>
-
+  <% end %>
+</div>
