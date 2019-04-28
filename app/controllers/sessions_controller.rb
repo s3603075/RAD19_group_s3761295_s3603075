@@ -1,5 +1,11 @@
 class SessionsController < ApplicationController
   def new
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
+    if @user
+      redirect_to @user
+    end
   end
 
   def create

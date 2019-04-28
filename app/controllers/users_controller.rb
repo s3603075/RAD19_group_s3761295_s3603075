@@ -4,7 +4,14 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
+    if @user
+      redirect_to @user
+    else
+      @user = User.new
+    end
   end
   
   def create
