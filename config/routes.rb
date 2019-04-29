@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  match "main/likeCourse" , :via => [:get], as: "likeCourse_action"
+  
   get 'all/courses'
 
   get 'all/coordinators'

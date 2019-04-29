@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .navbar-nav  a, .navbar-nav  li {
    color: white;
  }
@@ -81,6 +82,14 @@
   padding-top: 3px;
   padding-bottom: 3px;
 }
+.footer .row .col-md-3{
+  text-align: left;
+}
+
+.footer .row .col-md-3 h2{
+  text-align: left;
+}
+
 
 h4 {
   padding-bottom: 6px;
@@ -130,7 +139,7 @@ h1 {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   text-align: center;
   font-weight: normal;
   color: #777;
@@ -156,37 +165,43 @@ h2 {
 }
 
 /* footer */
+.footer .jumbotron{
+  background-color: #777;
+}
+
 
 footer {
+
   margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+  color: #e5e5e5;
 }
 
-footer a {
-  color: #555;
+.container-fluid{
+  padding-left: 50px;
+
 }
 
-/* footer */
-
-footer a:hover {
-  color: #222;
+footer h2 {
+  color: #ffffff;
 }
 
-footer small {
-  float: left;
+.btn-send,footer .btn-success, footer .btn {
+  background-color: #79a4bc;
+  border-color: #79a4bc;
 }
 
-footer ul {
-  float: right;
+.btn-send:hover,footer .btn-success:hover, footer .btn:hover {
+  background-color: rgba(150, 203, 233, 0.33);
+  border-color: rgba(150, 203, 233, 0.33);
+}
+
+
+
+.row li {
+  text-align: left;
   list-style: none;
 }
 
-footer ul li {
-  float: left;
-  margin-left: 15px;
+footer a {
+  color: #bfbfbf;
 }
-
-ul ul { display: none }
-ul li:hover ul { display: block; }

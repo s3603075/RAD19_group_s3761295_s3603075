@@ -1,11 +1,68 @@
- <footer class="footer">
-   <nav>
-     <ul>
-       <li><%= link_to "Home",     root_path %></li>
-       <li><%= link_to "Gmail",     "https://www.gmail.com" %></li>
-       <li><%= link_to "Facebook",    "https://facebook.com" %></li>
-       <li><%= link_to "Twitter",    "https://twitter.com" %></li>
-       <li><%= link_to "Snapchat",    "https://snapchat.com" %></li>
-     </ul>
+ <footer class="footer ">
+   <nav class="jumbotron">
+     <div class=" container-fluid">
+       <div class=" row">
+         <div class="col-md-3">
+           <h2>Contact us</h2>
+           <form id="contact-form" method="post" action="contact.php" role="form">
+
+             <div class="messages"></div>
+
+             <div class="controls">
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="form-group">
+                     <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Firstname is required.">
+                     <div class="help-block with-errors"></div>
+                   </div>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-8">
+                   <div class="form-group">
+                     <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Valid email is required.">
+                     <div class="help-block with-errors"></div>
+                   </div>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-8">
+                   <div class="form-group">
+                     <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="3" required="required" data-error="Please, leave us a message."></textarea>
+                     <div class="help-block with-errors"></div>
+                   </div>
+                 </div>
+                 <div class=" col-md-12">
+                   <input type="submit" class="btn btn-success btn-send" value="Send">
+                 </div>
+               </div>
+
+             </div>
+
+           </form>
+         </div>
+         <div class="col-md-3">
+           <h2>General inquires</h2>
+           <li><%= mail_to "s3761295@student.rmit.edu.au", "Andy Song" %></li>
+           <li><%= mail_to "s3761295@student.rmit.edu.au", "Junilang Jiang" %></li>
+           <li><%= mail_to "s3761295@student.rmit.edu.au", "Ali" %></li>
+         </div>
+         <div class="col-md-3">
+           <h2>Useful Links</h2>
+           <li><%= link_to "RMIT Courses",     "https://maps.google.com" %></li>
+           <li><%= link_to "RMIT Help Desk",     "https://www.gmail.com" %></li>
+           <li><%= link_to "RMIT International",    "https://rmit.com" %></li>
+         </div>
+         <div class="col-md-3">
+           <h2>Media</h2>
+           <li><%= link_to "Home",     root_path %></li>
+           <li><%= link_to "Gmail",     "https://www.gmail.com" %></li>
+           <li><%= link_to "Facebook",    "https://facebook.com" %></li>
+           <li><%= link_to "Twitter",    "https://twitter.com" %></li>
+           <li><%= link_to "Snapchat",    "https://snapchat.com" %></li>
+         </div>
+       </div>
+     </div>
    </nav>
  </footer>

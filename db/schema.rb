@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190425165423) do
+ActiveRecord::Schema.define(version: 20190427061156) do
 
   create_table "courses", force: :cascade do |t|
     t.string "course_name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20190425165423) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
+    t.integer "like"
+    t.integer "dislike"
   end
 
   create_table "courses_locations", id: false, force: :cascade do |t|
@@ -34,6 +36,14 @@ ActiveRecord::Schema.define(version: 20190425165423) do
     t.string "location_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rates", force: :cascade do |t|
+    t.integer "like"
+    t.integer "dislike"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "course_id"
   end
 
 end
