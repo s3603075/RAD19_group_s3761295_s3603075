@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   get 'category/Full_Stack_Dev'
 
-  get 'main/home'
+  get 'main/home'g
   
   get  'signup',  to: 'users#new'
   
