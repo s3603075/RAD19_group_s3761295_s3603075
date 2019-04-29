@@ -3,8 +3,14 @@
     <li role="presentation"><%= link_to "Course", :back %></li>
     <li role="presentation"  class="active"><%= link_to "Coordinator", all_coordinators_path %></li>
   </ul>
-  <% Course.select("distinct coordinator_name").each do |name| %>
-    <h1><%= name.coordinator_name %></h1>
-
+  <% User.all.each do |user| %>
+  <div class="media">
+    <div class="align-self-start mr-3">
+      <%= gravatar_for user %>
+    </div>
+    <div class="media-body">
+      <h4 class="mt-0"><%= user.name %></h4>
+    </div>
+  </div>
   <% end %>
 </div>
