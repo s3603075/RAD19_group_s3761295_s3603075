@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-            Category
+            <i class="fa fa-clone"></i> Category
           </a>
           <ul class="dropdown-menu">
             <% Course.select("category").group("category").each do |c| %>
@@ -15,7 +15,7 @@
         </li>
         <li class="dropdown">
           <a href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-            Locations
+            <i class="fa fa-map-marker"></i> Locations
           </a>
           <ul class="dropdown-menu">
             <% Location.all.each do |loc| %>
@@ -26,7 +26,7 @@
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-              User
+              <i class="fa fa-user"></i> User
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>

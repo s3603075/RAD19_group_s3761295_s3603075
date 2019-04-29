@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-  match "main/likeCourse" , :via => [:get], as: "likeCourse_action"
-
-=======
   get 'sessions/new'
 
->>>>>>> af19f64354e0c34d0ecea9e9f3afa085ae05337f
+
   get 'all/courses'
 
   get 'all/coordinators'
@@ -27,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'category/Full_Stack_Dev'
 
-  get 'main/home'g
+  get 'main/home'
   
   get  'signup',  to: 'users#new'
   

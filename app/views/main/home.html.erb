@@ -5,7 +5,7 @@
     This page is for Stage 1 of RAD Course
   </h2>
   <div class="">
-     <%=  link_to '<i class="glyphicon glyphicon-saved"></i>  Sign up now!'.html_safe, signup_path, class: "btn btn-lg btn-primary" %>
+     <%=  link_to '<i class="fa fa-user-plus"></i>  Sign up now!'.html_safe, signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 </div>
 
@@ -13,12 +13,20 @@
   <div class="media-body">
     <h4 class="media-heading">View Course as Guest User</h4>
     <p>browse and view courses as guest and sign up later</p>
-    <%=  link_to '<i class="glyphicon glyphicon-saved"></i>  Browse all courses'.html_safe, all_courses_path, class: "btn btn-md btn-success" %>
+    <%=  link_to '<i class="fa fa-eye"></i>  Browse all courses'.html_safe, all_courses_path, class: "btn btn-md btn-success" %>
   </div>
-  <div class="media-body">
-    <h4 class="media-heading">Sign in to your account</h4>
-    <p>Update your courses, rate courses, view coordinator information</p>
-    <%=  link_to '<i class="glyphicon glyphicon-saved"></i>  Log in to your account'.html_safe, login_path, class: "btn btn-md btn-success" %>
-  </div>
+  <% if logged_in? %>
+    <div class="media-body">
+      <h4 class="media-heading">Hey <%=current_user.name %></h4>
+      <p>Hope your day as smooth as rails development is!</p>
+      <%=  link_to 'Your Profile'.html_safe, current_user, class: "btn btn-md btn-success" %>
+    </div>
+  <% else %>
+    <div class="media-body">
+      <h4 class="media-heading">Sign in to your account</h4>
+      <p>Update your courses, rate courses, view coordinator information</p>
+      <%=  link_to '<i class="fa fa-sign-in"></i>  Log in to your account'.html_safe, login_path, class: "btn btn-md btn-success" %>
+    </div>
+  <% end %>
 </div>
 

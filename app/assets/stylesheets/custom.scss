@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 
 .navbar-nav  a, .navbar-nav  li {
@@ -57,7 +58,15 @@
   margin-top: 15px;
 }
 
+.thumbs-container {
+  display: flex;
+  justify-content: flex-end;
+  color: cornflowerblue;
+}
 
+.thumbs-container .like {
+  margin-right: 10px;
+}
 .btn-secondary {
   color: #fff;
 
@@ -81,13 +90,6 @@
 .content {
   padding-top: 3px;
   padding-bottom: 3px;
-}
-.footer .row .col-md-3{
-  text-align: left;
-}
-
-.footer .row .col-md-3 h2{
-  text-align: left;
 }
 
 
@@ -202,14 +204,37 @@ footer h2 {
   list-style: none;
 }
 
+
 footer a {
   color: #bfbfbf;
 }
-<<<<<<< HEAD
-=======
+
+.footer .row .col-md-3{
+  text-align: left;
+}
+
+.footer .row .col-md-3 h2{
+  text-align: left;
+}
+
+.row li .fa {
+  display: none;
+}
+
+.row li:hover .fa {
+  display: inline;
+}
+
+.jumbotron li :hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 
 ul ul { display: none }
-ul li:hover ul { display: block; }
+ul li:hover ul {
+  display: block;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -236,4 +261,3 @@ input {
     color: $state-danger-text;
   }
 }
->>>>>>> af19f64354e0c34d0ecea9e9f3afa085ae05337f

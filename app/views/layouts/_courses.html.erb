@@ -23,6 +23,15 @@
 
       </div>
       <small class="text-muted"><%= time_ago_in_words(course_details.created_at) %> ago</small>
+      <div class="thumbs-container">
+        <span class="like">
+          <button class="like-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-up"></i></button> 0
+        </span>
+        <span class="dislike">
+          <button class="dislike-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-down"></i></button> 0
+        </span>
+      </div>
+
 
     </div>
     </div>

@@ -33,7 +33,7 @@
                      <div class="help-block with-errors"></div>
                    </div>
                  </div>
-                 <div class=" col-md-12">
+                 <div class=" col-md-8">
                    <input type="submit" class="btn btn-success btn-send" value="Send">
                  </div>
                </div>
@@ -56,11 +56,11 @@
          </div>
          <div class="col-md-3">
            <h2>Media</h2>
-           <li><%= link_to "Home",     root_path %></li>
-           <li><%= link_to "Gmail",     "https://www.gmail.com" %></li>
-           <li><%= link_to "Facebook",    "https://facebook.com" %></li>
-           <li><%= link_to "Twitter",    "https://twitter.com" %></li>
-           <li><%= link_to "Snapchat",    "https://snapchat.com" %></li>
+           <li><%= link_to '<i class="fa fa-home"></i> Home'.html_safe,     root_path %></li>
+           <li><%= link_to '<i class="fa fa-send"></i> Gmail'.html_safe,     "https://www.gmail.com" %></li>
+           <li><%= link_to '<i class="fa fa-facebook"></i> Facebook'.html_safe,    "https://facebook.com" %></li>
+           <li><%= link_to '<i class="fa fa-twitter"></i> Twitter'.html_safe,    "https://twitter.com" %></li>
+           <li><%= link_to '<i class="fa fa-snapchat-ghost"></i> Snapchat'.html_safe,    "https://snapchat.com" %></li>
          </div>
        </div>
      </div>
