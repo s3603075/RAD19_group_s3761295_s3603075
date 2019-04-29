@@ -10,26 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20190427061156) do
-=======
 ActiveRecord::Schema.define(version: 20190427091906) do
->>>>>>> af19f64354e0c34d0ecea9e9f3afa085ae05337f
 
   create_table "courses", force: :cascade do |t|
     t.string "course_name"
     t.string "prerequisite"
-    t.string "category"
-    t.string "location"
     t.string "coordinator_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "category"
     t.integer "like"
     t.integer "dislike"
-=======
->>>>>>> af19f64354e0c34d0ecea9e9f3afa085ae05337f
   end
 
   create_table "courses_locations", id: false, force: :cascade do |t|
@@ -47,14 +38,14 @@ ActiveRecord::Schema.define(version: 20190427091906) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "rates", force: :cascade do |t|
     t.integer "like"
     t.integer "dislike"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "course_id"
-=======
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -62,7 +53,6 @@ ActiveRecord::Schema.define(version: 20190427091906) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
->>>>>>> af19f64354e0c34d0ecea9e9f3afa085ae05337f
   end
 
 end

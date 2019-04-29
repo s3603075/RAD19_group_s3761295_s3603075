@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 <<<<<<< HEAD
   match "main/likeCourse" , :via => [:get], as: "likeCourse_action"
-  
+
 =======
   get 'sessions/new'
 
