@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c3d720-f184-489b-8495-965b02e73fe5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/_tabs.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/category_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/like_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/location_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/course.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/course_location.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/location.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/rate.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/all/coordinators.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/all/coordinators.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/all/courses.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/all/courses.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/category/Full_Stack_Dev.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/category/IOS_Engineering.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/category/Java.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/category/Web_Development.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_coordinators.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_coordinators.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_courses.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_courses.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/location/loc14_08_26.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/location/loc14_10_30.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/location/loc14_10_31.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190417042750_create_courses.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190425065411_create_locations.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190425065540_create_course_locations.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190425072107_rename_to_courses_locations.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190425165423_change_category_from_integer_to_string.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190427044130_add_like_and_dislike_to_courses.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190427050607_create_rates.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190427061156_add_column_to_rate_for_course_id.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/course_locations.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/courses.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/rates.yml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -78,11 +37,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="210">
+              <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="103" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses_categories.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="75" lean-forward="true" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -108,10 +76,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses_locations.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+            <state relative-caret-position="231">
+              <caret line="11" column="106" selection-start-line="11" selection-start-column="106" selection-end-line="11" selection-end-column="106" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20190514095324_create_courses_locations.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20190514101949_rename_ids.rb">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -119,15 +101,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
               <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/course.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -146,15 +119,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -188,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20190425165423_change_category_from_integer_to_string.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190427044130_add_like_and_dislike_to_courses.rb" />
         <option value="$PROJECT_DIR$/app/models/rate.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190427061156_add_column_to_rate_for_course_id.rb" />
@@ -231,14 +194,15 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_coordinators.html.erb" />
         <option value="$PROJECT_DIR$/app/views/categories/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_courses.html.erb" />
         <option value="$PROJECT_DIR$/app/models/course.rb" />
         <option value="$PROJECT_DIR$/app/models/category.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_courses_categories.html.erb" />
         <option value="$PROJECT_DIR$/app/views/categories/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_courses_locations.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_tabs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/locations/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_courses.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_courses_categories.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_courses_locations.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20190514095324_create_courses_locations.rb" />
       </list>
     </option>
   </component>
@@ -355,6 +319,12 @@
               <item name="~/Documents/rails_project/rmitrad-a1" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="db" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="rmitrad-a1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Documents/rails_project/rmitrad-a1" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="db" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="migrate" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -362,6 +332,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/layouts" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -496,12 +467,12 @@
       <option name="presentableId" value="Default" />
       <updated>1556101016012</updated>
       <workItem from="1556101018549" duration="58304000" />
-      <workItem from="1557687350662" duration="29007000" />
+      <workItem from="1557687350662" duration="29691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87522000" />
+    <option name="totallyTimeSpent" value="88206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
@@ -595,16 +566,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/course.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/courses.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -841,13 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses_categories.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/categories/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -869,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses_locations.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/locations/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -885,8 +832,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="210">
+          <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses_categories.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="75" lean-forward="true" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_courses_locations.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="106" selection-start-line="11" selection-start-column="106" selection-end-line="11" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190514101949_rename_ids.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190514095324_create_courses_locations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
         </state>
       </provider>
     </entry>
