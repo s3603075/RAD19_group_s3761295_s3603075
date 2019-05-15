@@ -1,0 +1,27 @@
+<div class="container" role="navigation">
+    <%if current_page?(all_courses_path) %>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><%= link_to "Course", :back %></li>
+        <li role="presentation"><%= link_to "Coordinator", all_coordinators_path %></li>
+      </ul>
+      <%= render 'layouts/courses' %>
+    <%elsif current_page?(all_coordinators_path)%>
+      <ul class="nav nav-tabs">
+        <li role="presentation"><%= link_to "Course", :back %></li>
+        <li role="presentation" class="active"><%= link_to "Coordinator", all_coordinators_path %></li>
+      </ul>
+      <%= render 'layouts/coordinators' %>
+    <%elsif current_page?(category_path) %>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><%= link_to "Course", :back %></li>
+        <li role="presentation"><%= link_to "Coordinator", all_coordinators_path %></li>
+      </ul>
+      <%= render 'layouts/courses_categories' %>
+  <%elsif current_page?(location_path) %>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><%= link_to "Course", :back %></li>
+      <li role="presentation"><%= link_to "Coordinator", all_coordinators_path %></li>
+    </ul>
+    <%= render 'layouts/courses_locations' %>
+    <%end %>
+</div>

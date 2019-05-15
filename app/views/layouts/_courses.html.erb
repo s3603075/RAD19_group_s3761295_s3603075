@@ -1,10 +1,5 @@
-<div class="container" role="navigation">
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><%= link_to "Course", :back %></li>
-  <li role="presentation"><%= link_to "Coordinator", all_coordinators_path %></li>
-</ul>
 <div class="media-container">
-  <% Course.joins(:locations).where(whereCondition(yield :condition)).group(:id).each do |course_details| %>
+  <% Course.all.each do |course_details| %>
     <div class="media ">
     <div class="media-left media-middle">
       <a href="#">
@@ -13,29 +8,45 @@
     </div>
 
     <div class="media-body">
-      <h4 class="media-heading"><%= course_details.course_name %></h4>
+      <h4 class="media-heading"><%= link_to course_details.course_name , course_path(course_details.id)%></h4>
       <div class="content"><b>Prerequisite: </b><%= course_details.prerequisite %></div>
-      <div class="content"><b>Category: </b><%= link_to "#{course_details.category}", categoryPath(course_details.category.gsub(" ", "_")) %></div>
+
+      <div class="content "><b>Category: </b>
+        <% course_details.categories.each do |category| %>
+          <div class="link"><%= link_to category.category_name, category_path(category.id) %></div>
+        <% end %>
+      </div>
+
+
       <div class="content "><b>Location: </b>
-        <% Location.joins(:courses).where("course_name= \'#{course_details.course_name}\'").each do |location| %>
-          <div class="link"><%= link_to "#{location.location_name}", locationPath(location.location_name.gsub(".", "_")) %></div>
+        <% course_details.locations.each do |location| %>
+          <div class="link"><%= link_to location.location_name, location_path(location.id) %></div>
+        <% end %>
+      </div>
+
+      <%= image_tag course_details.picture.url if course_details.picture? %>
+
+      <small class="text-muted"><%= time_ago_in_words(course_details.created_at) %> ago</small>
+
+      <div class="thumbs-container">
+
+        <%= link_to like_course_path(course_details), method: :put do %>
+          <span class="like">
+            <button class="like-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+            <%= course_details.get_upvotes.size %>
+          </span>
         <% end %>
 
-      </div>
-      <small class="text-muted"><%= time_ago_in_words(course_details.created_at) %> ago</small>
-      <div class="thumbs-container">
-        <span class="like">
-          <button class="like-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-up"></i></button> 0
-        </span>
-        <span class="dislike">
-          <button class="dislike-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-down"></i></button> 0
-        </span>
+        <%= link_to dislike_course_path(course_details), method: :put do %>
+          <span class="dislike">
+            <button class="dislike-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-down"></i></button>
+            <%= course_details.get_downvotes.size %>
+           </span>
+        <% end %>
       </div>
 
 
     </div>
     </div>
   <% end %>
-</div>
-
 </div>

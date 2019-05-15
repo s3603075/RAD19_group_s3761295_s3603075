@@ -4,8 +4,8 @@
 
 
 .navbar-nav  a, .navbar-nav  li {
-   color: white;
- }
+  color: white;
+}
 
 .nav a:hover, .nav li:hover {
   border-radius: 5px;
@@ -14,6 +14,28 @@
 
 .navbar {
   background-color: #3E616E;
+}
+
+/*form container*/
+.container-form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  width: 60%;
+  padding: 20px;
+}
+
+.container-form .btn-success{
+  margin-top: 10px;
+}
+.container-form .checkbox-container {
+  display: block;
+}
+.container-form .checkbox {
+  display: inline-block;
+  margin-left: 40px;
 }
 
 .media-container .media {

@@ -1,6 +1,11 @@
  <header class="navbar navbar-fixed-top">
   <div class="container">
-    <%= link_to "course app", root_path, id: "logo" %>
+    <%if logged_in? %>
+      <%= link_to "course app",  all_courses_path, id: "logo" %>
+    <%else %>
+      <%= link_to "course app", root_path, id: "logo" %>
+    <%end %>
+
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -8,9 +13,15 @@
             <i class="fa fa-clone"></i> Category
           </a>
           <ul class="dropdown-menu">
-            <% Course.select("category").group("category").each do |c| %>
-              <li class="dropdown-item"><%= link_to "#{c.category}", categoryPath(c.category.gsub(" ", "_")) %></li>
+            <% Category.all.each do |c| %>
+              <li class="dropdown-item"><%= link_to c.category_name, category_path(c.id) %></li>
             <% end %>
+            <% if logged_in? %>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Create Category", new_category_path %>
+              </li>
+              <% end %>
           </ul>
         </li>
         <li class="dropdown">
@@ -18,11 +29,23 @@
             <i class="fa fa-map-marker"></i> Locations
           </a>
           <ul class="dropdown-menu">
-            <% Location.all.each do |loc| %>
-              <li><%= link_to "#{loc.location_name}", locationPath(loc.location_name.gsub(".", "_")) %></li>
+            <% Location.all.each do |l| %>
+              <li><%= link_to l.location_name, location_path(l.id) %></li>
+            <% end %>
+            <% if logged_in? %>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Create Location", new_location_path %>
+              </li>
             <% end %>
           </ul>
         </li>
+
+        <% if logged_in? %>
+          <li><%= link_to "New Course", new_course_path %></li>
+
+        <% end %>
+
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">

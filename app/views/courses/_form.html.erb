@@ -1,0 +1,60 @@
+ <div class="container-form">
+    <%= form_with(model: course, local: true) do |form| %>
+      <% if course.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+          <ul>
+            <% course.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+        <div class="field">
+          <%= form.label :course_name %>
+          <%= form.text_field :course_name, id: :course_course_name %>
+        </div>
+
+        <div class="field">
+          <%= form.label :prerequisite %>
+          <%= form.text_field :prerequisite, id: :course_prerequisite %>
+        </div>
+
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description, id: :course_description %>
+        </div>
+
+        <div class="checkbox-container">
+          <b>Category: </b>
+          <div class="checkbox">
+            <% Category.all.each do |category| %>
+              <%= check_box_tag 'course[category_ids][]', category.id, @course.categories.include?(category) %>
+              <%= category.category_name %>
+            <% end %>
+          </div>
+        </div>
+
+
+        <div class="checkbox-container">
+          <b>Location: </b>
+          <div class="checkbox">
+            <% Location.all.each do |location| %>
+                <%= check_box_tag "course[location_ids][]", location.id, @course.locations.include?(location) %>
+                <%= location.location_name%>
+            <% end %>
+          </div>
+        </div>
+
+      <span class="picture">
+        <%= form.file_field :picture %>
+      </span>
+
+
+      <div class="actions">
+        <%= form.submit :class => 'btn-success'%>
+      </div>
+    <% end %>
+</div>

@@ -4,6 +4,7 @@ module ApplicationHelper
     return "location_name=" + "\'#{condition}\'" if controller.controller_name == "location"
     return condition
   end
+  
   def full_title(page_title = '')
     base_title = "Course App"
     if page_title.empty?
@@ -11,5 +12,9 @@ module ApplicationHelper
     else
       page_title + " | " + base_title
     end
+  end
+  
+  def query (specModelName = "all")
+    return specModelName
   end
 end

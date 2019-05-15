@@ -1,0 +1,55 @@
+<div class="media-container">
+  <% Category.where(id: params[:id]).each do |categ| %>
+    <% categ.courses.each do |course_details| %>
+      <div class="media ">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="https://d33wubrfki0l68.cloudfront.net/f29dc9865845dd2e2c163996c42816237588b6df/d3f8b/assets/images/rails-logo.png" alt="...">
+          </a>
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to course_details.course_name, course_path(course_details.id) %></h4>
+          <div class="content"><b>Prerequisite: </b><%= course_details.prerequisite %></div>
+
+          <div class="content "><b>Category: </b>
+            <% course_details.categories.each do |category| %>
+              <div class="link"><%= link_to category.category_name, category_path(category.id) %></div>
+            <% end %>
+          </div>
+
+
+          <div class="content "><b>Location: </b>
+            <% course_details.locations.each do |location| %>
+              <div class="link"><%= link_to location.location_name, location_path(location.id) %></div>
+            <% end %>
+          </div>
+
+          <%= image_tag course_details.picture.url if course_details.picture? %>
+
+          <small class="text-muted"><%= time_ago_in_words(course_details.created_at) %> ago</small>
+
+          <div class="thumbs-container">
+
+            <%= link_to like_course_path(course_details), method: :put do %>
+          <span class="like">
+            <button class="like-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+            <%= course_details.get_upvotes.size %>
+          </span>
+            <% end %>
+
+            <%= link_to dislike_course_path(course_details), method: :put do %>
+          <span class="dislike">
+            <button class="dislike-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-down"></i></button>
+            <%= course_details.get_downvotes.size %>
+           </span>
+            <% end %>
+          </div>
+
+
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
