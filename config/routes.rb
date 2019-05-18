@@ -32,6 +32,6 @@ Rails.application.routes.draw do
   
   delete '/logout',  to: 'sessions#destroy'
 
-
+  get    '/course/edit-course', to: 'course#edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

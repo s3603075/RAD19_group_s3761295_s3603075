@@ -19,6 +19,15 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    @user = helpers.current_user
+    @course = Course.find(params[:id])
+    
+    if @user.id == @course.user_id
+      permitted_columns = params.permit(:course_name, :prerequisite, :description)
+      @course.update_attributes(permitted_columns)
+    else
+      redirect_back fallback_location: root_path
+    end
   end
 
   # POST /courses

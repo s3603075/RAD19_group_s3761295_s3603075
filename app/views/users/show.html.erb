@@ -1,9 +1,9 @@
 <h1> Courses Created By Me</h1>
 
-<%= @user.name %>, <%= @user.email %>
 <div class="container">
   <div class="media-container">
     <% @user.courses.each do |course_details| %>
+      <%= button_to 'Edit', edit_course_path(course_details), :method => "get", :form_class => "btn btn-primary" %>
       <div class="media ">
         <div class="media-left media-middle">
           <a href="#">
