@@ -1,60 +1,20 @@
- <footer class="footer ">
+<footer class="footer ">
    <nav class="jumbotron">
      <div class=" container-fluid">
        <div class=" row">
-         <div class="col-md-3">
-           <h2>Contact us</h2>
-           <form id="contact-form" method="post" action="contact.php" role="form">
-
-             <div class="messages"></div>
-
-             <div class="controls">
-
-               <div class="row">
-                 <div class="col-md-6">
-                   <div class="form-group">
-                     <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Firstname is required.">
-                     <div class="help-block with-errors"></div>
-                   </div>
-                 </div>
-               </div>
-               <div class="row">
-                 <div class="col-md-8">
-                   <div class="form-group">
-                     <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Valid email is required.">
-                     <div class="help-block with-errors"></div>
-                   </div>
-                 </div>
-               </div>
-               <div class="row">
-                 <div class="col-md-8">
-                   <div class="form-group">
-                     <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="3" required="required" data-error="Please, leave us a message."></textarea>
-                     <div class="help-block with-errors"></div>
-                   </div>
-                 </div>
-                 <div class=" col-md-8">
-                   <input type="submit" class="btn btn-success btn-send" value="Send" action="disable">
-                 </div>
-               </div>
-
-             </div>
-
-           </form>
-         </div>
-         <div class="col-md-3">
+         <div class="col-md-4">
            <h2>General inquires</h2>
            <li><%= mail_to "s3761295@student.rmit.edu.au", "Andy Song" %></li>
            <li><%= mail_to "s3761295@student.rmit.edu.au", "Junilang Jiang" %></li>
            <li><%= mail_to "s3761295@student.rmit.edu.au", "Ali" %></li>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-4">
            <h2>Useful Links</h2>
            <li><%= link_to "RMIT Courses",     "https://maps.google.com" %></li>
            <li><%= link_to "RMIT Help Desk",     "https://www.gmail.com" %></li>
            <li><%= link_to "RMIT International",    "https://rmit.com" %></li>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-4">
            <h2>Media</h2>
            <li><%= link_to '<i class="fa fa-home"></i> Home'.html_safe,     root_path %></li>
            <li><%= link_to '<i class="fa fa-send"></i> Gmail'.html_safe,     "https://www.gmail.com" %></li>
