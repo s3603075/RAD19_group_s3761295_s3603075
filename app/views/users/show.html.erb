@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 <% if @user.id == current_user.id %>
   <h1> Courses Created By Me</h1>
 <%else %>
   <h1> Courses Created By <%= @user.name %></h1>
 <%end %>
+=======
+<h1> Courses Created By Me</h1>
+
+>>>>>>> 3bc6db9f69893cc2119c3b3642fa93628eb469ed
 <div class="container">
   <div class="media-container">
     <% @user.courses.each do |course_details| %>
+      <%= button_to 'Edit', edit_course_path(course_details), :method => "get", :form_class => "btn btn-primary" %>
       <div class="media ">
         <div class="media-left media-middle">
           <a href="#">

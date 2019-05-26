@@ -4,6 +4,7 @@
 
 <div class="container-form">
   <%= form_for(@user) do |f| %>
+<<<<<<< HEAD
 
     <%= render 'shared/error_messages' %>
 
@@ -26,3 +27,29 @@
   <% end %>
 
 </div>
+=======
+      
+      <%= render 'shared/error_messages' %>
+      
+      <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      
+      <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      
+      <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <%= f.submit "Change Details", class: "btn btn-success" %>
+    <% end %>
+
+</div>
+
+
+>>>>>>> 3bc6db9f69893cc2119c3b3642fa93628eb469ed

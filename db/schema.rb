@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190520090435) do
+=======
+ActiveRecord::Schema.define(version: 20190521013456) do
+>>>>>>> 3bc6db9f69893cc2119c3b3642fa93628eb469ed
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "message"
   end
 
   create_table "courses", force: :cascade do |t|
