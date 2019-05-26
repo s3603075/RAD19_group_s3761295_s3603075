@@ -24,6 +24,40 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def edit
+    if  !can_edit_update_user
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    end
+    @user = helpers.current_user
+  end
+
+  def update
+    if  !can_edit_update_user
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    end
+    @user = helpers.current_user
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    else
+      @user = User.find(params[:id])
+      @user.destroy
+      flash[:success] = "User is successfully deleted"
+      redirect_to admin_coordinator_path
+    end
+  end
   
   private
 

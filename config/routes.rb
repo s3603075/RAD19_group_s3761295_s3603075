@@ -32,6 +32,13 @@ Rails.application.routes.draw do
   
   delete '/logout',  to: 'sessions#destroy'
 
+  get '/admin/course_edit', to: 'admin#course'
+  
+  get '/admin/coordinator_edit', to: 'admin#coordinator'
+
+  get '/admin/category_edit', to: 'admin#category'
+
+  get '/admin/location_edit', to: 'admin#location'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

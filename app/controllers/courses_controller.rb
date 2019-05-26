@@ -1,10 +1,12 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  # before_action :is_admin, only: [:new, :edit, :update, :destroy]
+  # before_action :user_own_course, only: [:edit, :update]
 
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    redirect_to all_courses_path
   end
 
   # GET /courses/1
@@ -14,40 +16,62 @@ class CoursesController < ApplicationController
 
   # GET /courses/new
   def new
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     @course = Course.new
   end
 
   # GET /courses/1/edit
   def edit
+    if !can_edit_update
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
+    
   end
+
 
   # POST /courses
   # POST /courses.json
   def create
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     @course = Course.new(course_params)
     @course.user_id = current_user.id
 
-    respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course}
+        flash[:success] = "Course was successfully created."
+        redirect_to all_courses_path
       else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+        render :new
+        # format.json { render json: @course.errors, status: :unprocessable_entity }
+        flash[:danger] = @course.errors.full_messages
+        # @course.errors.each {|e| flash.now[:danger] = e}
     end
   end
 
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    if !can_edit_update
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course }
+        flash[:success] = "Course was successfully updated."
+        redirect_to all_courses_path
       else
         format.html { render :edit }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        flash[:danger] = "Something went wrong!"
       end
     end
   end
@@ -55,22 +79,33 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
-    @course.destroy
-    respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
-      format.json { head :no_content }
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    else
+      @course.destroy
+      flash[:success] = "Course is successfully deleted"
+      redirect_to admin_course_edit_path
     end
   end
 
   def upvote
     @course = Course.find(params[:id])
-    @course.upvote_by current_user
+    if !@course.voted_up_by?(current_user)
+      @course.upvote_by current_user
+    else
+      flash[:danger] = 'You can only vote up a course once!'
+    end
     redirect_back fallback_location: root_path
   end
 
   def downvote
     @course = Course.find(params[:id])
-    @course.downvote_by current_user
+    if !@course.voted_down_by?(current_user)
+      @course.downvote_by current_user
+    else
+      flash[:danger] = 'You can only vote down a course once!'
+    end
     redirect_back fallback_location: root_path
   end
 

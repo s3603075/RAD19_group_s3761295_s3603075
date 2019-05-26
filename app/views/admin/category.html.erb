@@ -1,0 +1,19 @@
+<div class="container">
+  <% Category.all.each do |c| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="mt-0"><%= c.category_name %></h4>
+      </div>
+    </div>
+
+    <div class="link btn btn-success">
+      <%= link_to 'Edit Category', edit_category_path(c) %>
+    </div>
+    <div class="link btn btn-success">
+      <%= link_to 'Delete Category', category_path(c), method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </div>
+
+
+  <% end %>
+</div>

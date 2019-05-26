@@ -17,4 +17,11 @@ module ApplicationHelper
   def query (specModelName = "all")
     return specModelName
   end
+
+
+  def is_admin
+    # redirect_to root_path, alert: "Not authorized" if
+    return (current_user.nil? or current_user.admin?)
+  end
+
 end

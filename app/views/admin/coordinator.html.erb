@@ -1,0 +1,22 @@
+<div class="container">
+  <% User.all.each do |user| %>
+    <div class="media">
+      <div class="align-self-start mr-3">
+        <%= gravatar_for user %>
+      </div>
+      <div class="media-body">
+        <h4 class="mt-0"><%= user.name %></h4>
+      </div>
+    </div>
+
+      <div class="link btn btn-success">
+        <%= link_to 'Edit Coordinator', edit_user_path(user) %>
+      </div>
+      <div class="link btn btn-success">
+        <%= link_to 'Delete Coordinator', user_path(user), method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </div>
+
+
+  <% end %>
+</div>

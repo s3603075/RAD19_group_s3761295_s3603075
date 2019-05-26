@@ -1,0 +1,28 @@
+<% provide(:title, "Edit Profile") %>
+
+<h1>Edit Profile</h1>
+
+<div class="container-form">
+  <%= form_for(@user) do |f| %>
+
+    <%= render 'shared/error_messages' %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+
+    <%= f.submit "Change Details", class: "btn btn-success" %>
+  <% end %>
+
+</div>
