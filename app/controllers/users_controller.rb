@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   def show
     @user = User.find(params[:id])
   end
@@ -55,7 +56,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.destroy
       flash[:success] = "User is successfully deleted"
-      redirect_to admin_coordinator_path
+      redirect_to admin_coordinator_edit_path
     end
   end
   

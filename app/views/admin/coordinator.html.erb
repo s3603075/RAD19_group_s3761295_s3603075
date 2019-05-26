@@ -1,3 +1,5 @@
+<% provide(:title, "Admin") %>
+<h1>Coordinator Edit</h1>
 <div class="container">
   <% User.all.each do |user| %>
     <div class="media">
@@ -9,6 +11,7 @@
       </div>
     </div>
 
+    <div class="admin_buttons">
       <div class="link btn btn-success">
         <%= link_to 'Edit Coordinator', edit_user_path(user) %>
       </div>
@@ -16,6 +19,7 @@
         <%= link_to 'Delete Coordinator', user_path(user), method: :delete,
                     data: { confirm: 'Are you sure?' } %>
       </div>
+    </div>
 
 
   <% end %>

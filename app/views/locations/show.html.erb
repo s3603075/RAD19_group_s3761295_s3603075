@@ -1,3 +1,11 @@
-<%= render 'layouts/tabs' %>
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<% provide(:title, "Courses at "+@location.location_name) %>
+<h1>Courses in <%=@location.location_name %></h1>
+<%if !@location.courses.empty?%>
+  <%= render 'layouts/tabs' %>
+<%else %>
+  <div class="container">
+    <div class="alert alert-warning center" role="alert">
+      <b class="center">This Location has no Courses</b>
+    </div>
+  </div>
+<%end %>

@@ -1,3 +1,11 @@
-<%= render 'layouts/tabs' %>
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% provide(:title, "Course in " + @category.category_name) %>
+<h1>Courses in <%=@category.category_name %></h1>
+<%if !@category.courses.empty?%>
+  <%= render 'layouts/tabs' %>
+<%else %>
+  <div class="container">
+    <div class="alert alert-warning center" role="alert">
+      <b class="center">This Category has no Courses</b>
+    </div>
+  </div>
+<%end %>

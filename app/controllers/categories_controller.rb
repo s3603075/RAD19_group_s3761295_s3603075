@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  include ApplicationHelper
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    redirect_to all_courses_path
   end
 
   # GET /categories/1
@@ -14,50 +14,67 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     @category = Category.new
   end
 
   # GET /categories/1/edit
   def edit
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    end
   end
 
   # POST /categories
   # POST /categories.json
   def create
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     @category = Category.new(category_params)
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if @category.save
+      flash[:success] = "Category was successfully created."
+      redirect_to all_courses_path
+    else
+      render :new
+      flash[:danger] = @course.errors.full_messages
     end
   end
 
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
-    respond_to do |format|
-      if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @category }
-      else
-        format.html { render :edit }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
+    if @category.update(category_params)
+      flash[:success] = "Category was successfully updated."
+      redirect_to admin_category_edit_path
+    else
+      flash[:danger] = "Something went wrong!"
     end
   end
 
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
-    @category.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    else
+      @category.destroy
+      flash[:success] = "Location is successfully deleted"
+      redirect_to admin_category_edit_path
     end
   end
 

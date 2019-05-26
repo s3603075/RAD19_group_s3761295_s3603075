@@ -1,10 +1,10 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
-
+  include ApplicationHelper
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    redirect_to all_courses_path
   end
 
   # GET /locations/1
@@ -14,51 +14,67 @@ class LocationsController < ApplicationController
 
   # GET /locations/new
   def new
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     @location = Location.new
   end
 
   # GET /locations/1/edit
   def edit
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
   end
 
   # POST /locations
   # POST /locations.json
   def create
+    if !logged_in?
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
     @location = Location.new(location_params)
-
-    respond_to do |format|
-      if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
-        format.json { render :show, status: :created, location: @location }
-      else
-        format.html { render :new }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-
-      end
+    if @location.save
+      flash[:success] = "Location was successfully created."
+      redirect_to all_courses_path
+    else
+      render :new
+      flash[:danger] = @course.errors.full_messages
     end
   end
 
   # PATCH/PUT /locations/1
   # PATCH/PUT /locations/1.json
   def update
-    respond_to do |format|
-      if @location.update(location_params)
-        format.html { redirect_to @location, notice: 'Location was successfully updated.' }
-        format.json { render :show, status: :ok, location: @location }
-      else
-        format.html { render :edit }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-      end
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+      return
+    end
+    if @location.update(location_params)
+      flash[:success] = "Location was successfully updated."
+      redirect_to admin_location_edit_path
+    else
+      flash[:danger] = "Something went wrong!"
     end
   end
 
   # DELETE /locations/1
   # DELETE /locations/1.json
   def destroy
-    @location.destroy
-    respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
-      format.json { head :no_content }
+    if !is_admin
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    else
+      @location.destroy
+      flash[:success] = "Location is successfully deleted"
+      redirect_to admin_location_edit_path
     end
   end
 

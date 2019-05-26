@@ -2,6 +2,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
+//admin buttons
+.admin_buttons {
+  margin-top: 15px;
+}
+.admin_buttons .link a{
+  color: white;
+}
+.admin_buttons .link a:hover{
+  color: rgba(51, 51, 51, 0.97);
+  text-decoration: none;
+}
 
 .navbar-nav  a, .navbar-nav  li {
   color: white;
@@ -43,23 +54,48 @@
   position: center;
   padding-bottom:40px;
   padding-top:10px;
+  padding-left: 5vh;
 }
 
 .media-container .media .media-left {
-  height: 200px;
-  width: 200px;
+  //height: 200px;
+  width: 15vh;
+  padding-right: 5vh;
 }
 
 .media-container .media .media-body {
   border-radius: 5px;
   background-color: #e0e0e0;
-  width: 550px;
   padding: 20px;
-
 }
 
+.media-container .media .media-body {
+  // courses under courses/coordinators tabs has diff width
+  width: 100vh;
+}
+
+.media-container .media .media-right {
+  width: 35%;
+}
+
+.course-description{
+  margin-top: -10px;
+}
+
+//divider
 .media-container .media:not(:last-child) {
   border-bottom: 1px solid #e5e5e5;
+}
+
+.user_info{
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.gravatar {
+  hight: 80px;
+  width: 80px;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 
 .media {

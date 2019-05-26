@@ -1,10 +1,11 @@
 <div class="media-container">
   <% Course.all.each do |course_details| %>
     <div class="media ">
-    <div class="media-left media-middle">
-      <a href="#">
-        <img class="media-object" src="https://d33wubrfki0l68.cloudfront.net/f29dc9865845dd2e2c163996c42816237588b6df/d3f8b/assets/images/rails-logo.png" alt="...">
-      </a>
+    <div class="media-left media-middle ">
+      <div class="center">
+          <%= gravatar_for course_details.user %>
+          <h4 class="media-heading"> <b><%=link_to course_details.user.name, user_path(course_details.user.id) %></b></h4>
+      </div>
     </div>
 
     <div class="media-body">
@@ -23,8 +24,6 @@
           <div class="link"><%= link_to location.location_name, location_path(location.id) %></div>
         <% end %>
       </div>
-
-      <%= image_tag course_details.picture.url if course_details.picture? %>
 
       <small class="text-muted"><%= time_ago_in_words(course_details.created_at) %> ago</small>
 

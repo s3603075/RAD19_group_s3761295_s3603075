@@ -1,3 +1,5 @@
+<% provide(:title, "Admin") %>
+<h1>Category Edit</h1>
 <div class="container">
   <% Category.all.each do |c| %>
     <div class="media">
@@ -5,13 +7,14 @@
         <h4 class="mt-0"><%= c.category_name %></h4>
       </div>
     </div>
-
-    <div class="link btn btn-success">
-      <%= link_to 'Edit Category', edit_category_path(c) %>
-    </div>
-    <div class="link btn btn-success">
-      <%= link_to 'Delete Category', category_path(c), method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
+    <div class="admin_buttons">
+      <div class="link btn btn-success">
+        <%= link_to 'Edit Category', edit_category_path(c) %>
+      </div>
+      <div class="link btn btn-success">
+        <%= link_to 'Delete Category', category_path(c), method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
 
 

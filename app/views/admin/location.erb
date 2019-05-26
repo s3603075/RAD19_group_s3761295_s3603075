@@ -1,3 +1,5 @@
+<% provide(:title, "Admin") %>
+<h1>Location Edit</h1>
 <div class="container">
   <% Location.all.each do |l| %>
     <div class="media">
@@ -6,6 +8,7 @@
       </div>
     </div>
 
+    <div class="admin_buttons">
       <div class="link btn btn-success">
         <%= link_to 'Edit Location', edit_location_path(l) %>
       </div>
@@ -13,6 +16,7 @@
         <%= link_to 'Delete Location', location_path(l), method: :delete,
                     data: { confirm: 'Are you sure?' } %>
       </div>
+    </div>
 
 
   <% end %>

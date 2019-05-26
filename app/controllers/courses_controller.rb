@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  include ApplicationHelper
   # before_action :is_admin, only: [:new, :edit, :update, :destroy]
   # before_action :user_own_course, only: [:edit, :update]
 
@@ -26,24 +27,20 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
-<<<<<<< HEAD
+
     if !can_edit_update
       flash[:danger] = "Not authorized"
       redirect_to root_path
       return
     end
-    
-=======
-    @user = helpers.current_user
-    @course = Course.find(params[:id])
-    
-    if @user.id == @course.user_id
-      permitted_columns = params.permit(:course_name, :prerequisite, :description)
-      @course.update_attributes(permitted_columns)
-    else
-      redirect_back fallback_location: root_path
-    end
->>>>>>> 3bc6db9f69893cc2119c3b3642fa93628eb469ed
+    # @user = helpers.current_user
+    # @course = Course.find(params[:id])
+    #
+    # if @user.id == @course.user_id
+    #   permitted_columns = params.permit(:course_name, :prerequisite, :description)
+    #   @course.update_attributes(permitted_columns)
+    #   redirect_back fallback_location: root_path
+    # end
   end
 
 
@@ -60,7 +57,7 @@ class CoursesController < ApplicationController
 
       if @course.save
         flash[:success] = "Course was successfully created."
-        redirect_to all_courses_path
+        redirect_to course_path(@course.id)
       else
         render :new
         # format.json { render json: @course.errors, status: :unprocessable_entity }
@@ -77,14 +74,11 @@ class CoursesController < ApplicationController
       redirect_to root_path
       return
     end
-    respond_to do |format|
-      if @course.update(course_params)
-        flash[:success] = "Course was successfully updated."
-        redirect_to all_courses_path
-      else
-        format.html { render :edit }
-        flash[:danger] = "Something went wrong!"
-      end
+    if @course.update(course_params)
+      flash[:success] = "Course was successfully updated."
+      redirect_to course_path(@course.id)
+    else
+      flash[:danger] = "Something went wrong!"
     end
   end
 
@@ -125,6 +119,7 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

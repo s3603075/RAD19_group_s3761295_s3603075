@@ -36,7 +36,6 @@ Rails.application.routes.draw do
   
   resources :contact
 
-<<<<<<< HEAD
   get '/admin/course_edit', to: 'admin#course'
   
   get '/admin/coordinator_edit', to: 'admin#coordinator'
@@ -45,9 +44,7 @@ Rails.application.routes.draw do
 
   get '/admin/location_edit', to: 'admin#location'
 
-=======
-  #match '/contact-form' => 'main#contactus', as: contact_us
-  
->>>>>>> 3bc6db9f69893cc2119c3b3642fa93628eb469ed
+  get '*unmatched_route', to: 'application#not_found'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
