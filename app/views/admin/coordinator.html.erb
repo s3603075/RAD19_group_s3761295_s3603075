@@ -1,26 +1,34 @@
 <% provide(:title, "Admin") %>
 <h1>Coordinator Edit</h1>
-<div class="container">
-  <% User.all.each do |user| %>
-    <div class="media">
-      <div class="align-self-start mr-3">
-        <%= gravatar_for user %>
-      </div>
-      <div class="media-body">
-        <h4 class="mt-0"><%= user.name %></h4>
-      </div>
+<%if Coordinator.all.empty?%>
+  <div class="container">
+    <div class="alert alert-warning center" role="alert">
+      <b class="center">No Coordinators to Edit</b>
     </div>
-
-    <div class="admin_buttons">
-      <div class="link btn btn-success">
-        <%= link_to 'Edit Coordinator', edit_user_path(user) %>
+  </div>
+<%else %>
+  <div class="container">
+    <% User.all.each do |user| %>
+      <div class="media">
+        <div class="align-self-start mr-3">
+          <%= gravatar_for user %>
+        </div>
+        <div class="media-body">
+          <h4 class="mt-0"><%= user.name %></h4>
+        </div>
       </div>
-      <div class="link btn btn-success">
-        <%= link_to 'Delete Coordinator', user_path(user), method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
+
+      <div class="admin_buttons">
+        <div class="link btn btn-success">
+          <%= link_to 'Edit Coordinator', edit_user_path(user) %>
+        </div>
+        <div class="link btn btn-success">
+          <%= link_to 'Delete Coordinator', user_path(user), method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
-    </div>
 
 
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,15 +1,22 @@
-<div class="container center">
-  <% User.all.each do |user| %>
-    <div class="">
-      <div class="media">
-        <div class="align-self-start mr-3">
-          <%= gravatar_for user %>
-        </div>
-        <div class="media-body">
-          <h4 class="mt-0"><%= link_to user.name , user_path(user.id)%></h4>
+<%if Coordinator.all.empty?%>
+  <div class="container">
+    <div class="alert alert-warning center" role="alert">
+      <b class="center">No Coordinators to Present</b>
+    </div>
+  </div>
+<%else %>
+  <div class="container center">
+    <% User.all.each do |user| %>
+      <div class="">
+        <div class="media">
+          <div class="align-self-start mr-3">
+            <%= gravatar_for user %>
+          </div>
+          <div class="media-body">
+            <h4 class="mt-0"><%= link_to user.name , user_path(user.id)%></h4>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-
+    <% end %>
+  </div>
+<%end %>
