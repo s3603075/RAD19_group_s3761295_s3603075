@@ -7,24 +7,22 @@
     </div>
   </div>
 <%else %>
-  <div class="container">
+  <div class="container media-container">
     <% Category.all.each do |c| %>
       <div class="media">
         <div class="media-body">
-          <h4 class="mt-0"><%= c.category_name %></h4>
+          <div class="content"><b>Category Name: </b><%= c.category_name %></div>
+        </div>
+        <div class="admin_buttons">
+          <div class="link btn btn-success">
+            <%= link_to 'Edit Category', edit_category_path(c) %>
+          </div>
+          <div class="link btn btn-success">
+            <%= link_to 'Delete Category', category_path(c), method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+          </div>
         </div>
       </div>
-      <div class="admin_buttons">
-        <div class="link btn btn-success">
-          <%= link_to 'Edit Category', edit_category_path(c) %>
-        </div>
-        <div class="link btn btn-success">
-          <%= link_to 'Delete Category', category_path(c), method: :delete,
-                      data: { confirm: 'Are you sure?' } %>
-        </div>
-      </div>
-
-
     <% end %>
   </div>
 <%end %>

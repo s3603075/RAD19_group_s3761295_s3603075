@@ -7,25 +7,22 @@
     </div>
   </div>
 <%else %>
-  <div class="container">
+  <div class="container media-container">
     <% Location.all.each do |l| %>
       <div class="media">
         <div class="media-body">
-          <h4 class="mt-0"><%= l.location_name %></h4>
+          <div class="content"><b>Location Name: </b><%= l.location_name %></div>
+        </div>
+        <div class="admin_buttons">
+          <div class="link btn btn-success">
+            <%= link_to 'Edit Location', edit_location_path(l) %>
+          </div>
+          <div class="link btn btn-success">
+            <%= link_to 'Delete Location', location_path(l), method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+          </div>
         </div>
       </div>
-
-      <div class="admin_buttons">
-        <div class="link btn btn-success">
-          <%= link_to 'Edit Location', edit_location_path(l) %>
-        </div>
-        <div class="link btn btn-success">
-          <%= link_to 'Delete Location', location_path(l), method: :delete,
-                      data: { confirm: 'Are you sure?' } %>
-        </div>
-      </div>
-
-
     <% end %>
   </div>
 <%end %>
