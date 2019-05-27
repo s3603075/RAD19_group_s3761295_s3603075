@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0c3d720-f184-489b-8495-965b02e73fe5" name="Default Changelist" comment="" />
+    <list default="true" id="b0c3d720-f184-489b-8495-965b02e73fe5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/uploaders/picture_uploader.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/uploaders/picture_uploader.rb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -43,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/uploaders/picture_uploader.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+            <state relative-caret-position="477">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -425,16 +427,15 @@
       <option name="presentableId" value="Default" />
       <updated>1556101016012</updated>
       <workItem from="1556101018549" duration="58304000" />
-      <workItem from="1557687350662" duration="89196000" />
+      <workItem from="1557687350662" duration="89449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147711000" />
+    <option name="totallyTimeSpent" value="147964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49856734" visible="true" weight="0.17358893" />
       <window_info id="Structure" order="1" sideWeight="0.50143266" side_tool="true" weight="0.22070014" />
@@ -812,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/uploaders/picture_uploader.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+        <state relative-caret-position="477">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
         </state>
       </provider>
     </entry>
