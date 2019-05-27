@@ -1,5 +1,3 @@
-require 'aws-sdk-s3'
-
 CarrierWave.configure do |config|
   config.storage    = :aws
   config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
