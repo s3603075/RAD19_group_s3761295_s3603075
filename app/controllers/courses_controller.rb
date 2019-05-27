@@ -54,8 +54,8 @@ class CoursesController < ApplicationController
       return
     end
     s3 = Aws::S3::Resource.new(region:'ap-southeast-2')
-    obj = s3.bucket('course-app').object(params[:picture].original_filename)
-    obj.upload_file(params[:picture].original_filename)
+    obj = s3.bucket('course-app').object(params[:picture])
+    obj.upload_file(params[:picture])
     @course = Course.new(course_params)
     @course.user_id = current_user.id
 
