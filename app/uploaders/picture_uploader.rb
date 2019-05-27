@@ -3,9 +3,15 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
     include CarrierWave::MiniMagick
     process resize_to_fit: [400, 400]
+    require 'aws-sdk-s3'
+
+
+    s3 = Aws::S3::Resource.new(region:'us-west-2')
+    obj = s3.bucket('bucket-name').object('key')
+    obj.upload_file('/path/to/source/file')
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :aws
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
