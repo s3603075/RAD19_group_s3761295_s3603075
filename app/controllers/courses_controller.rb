@@ -53,11 +53,24 @@ class CoursesController < ApplicationController
       redirect_to root_path
       return
     end
+
+    file_name = @picture
+    upload_file = "/path/to/#{@picture}"
+
+# Create an instance of the Aws::S3::Resource class
     s3 = Aws::S3::Resource.new(region:'ap-southeast-2')
-    obj = s3.bucket('course-app').object("#{params[:picture]}")
-    obj.upload_file("Uploads/#{params[:picture]}")
-    @course = Course.new(course_params)
-    @course.user_id = current_user.id
+# Reference the target object by bucket name and key.
+# Objects live in a bucket and have unique keys that identify the object.
+    obj = s3.bucket('course-app').object(file_name)
+    obj.upload_file(upload_file, { acl: 'public-read' })  # http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
+
+# Returns Public URL to the file
+    obj.public_url
+    #
+    # obj = s3.bucket('course-app').object("#{params[:picture]}")
+    # obj.upload_file("Uploads/#{params[:picture]}")
+    # @course = Course.new(course_params)
+    # @course.user_id = current_user.id
 
       if @course.save
         flash[:success] = "Course was successfully created."
@@ -123,7 +136,7 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
-
+      @picture = Course.find(params[:picture])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
