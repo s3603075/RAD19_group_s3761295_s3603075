@@ -30,8 +30,8 @@ class PictureUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     s3 = Aws::S3::Resource.new(region:'ap-southeast-2')
-    obj = s3.bucket('course-app').object("#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}")
-    obj.upload_file("uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}")
+    obj = s3.bucket('course-app').object(:file)
+    obj.upload_file(:file)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
