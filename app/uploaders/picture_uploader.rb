@@ -3,13 +3,24 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
     include CarrierWave::MiniMagick
     process resize_to_fit: [400, 400]
-    # require 'aws-sdk-s3'
+    require 'aws-sdk-s3'
     #
     #
     # s3 = Aws::S3::Resource.new(region:'us-west-2')
     # obj = s3.bucket('bucket-name').object('key')
     # obj.upload_file('/path/to/source/file')
 
+    CarrierWave.configure do |config|
+      config.storage    = :aws
+      config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
+      config.aws_acl    = 'public-read'
+      config.aws_authenticated_url_expiration = 60 * 60 * 24 * 7
+      config.aws_credentials = {
+          access_key_id:     ENV.fetch('AWS_ACCESS_KEY_ID'),
+          secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+          region:            ENV.fetch('AWS_REGION') # Required
+      }
+    end
   # Choose what kind of storage to use for this uploader:
   storage :aws
   # storage :fog
