@@ -55,7 +55,7 @@ class CoursesController < ApplicationController
     end
 
     file_name = "#{@picture}"
-    upload_file = "uploads/course/picture/#{@course}/#{@picture}"
+    upload_file = "uploads/course/picture/#{@course}"
 
 # Create an instance of the Aws::S3::Resource class
     s3 = Aws::S3::Resource.new(region:'ap-southeast-2')
