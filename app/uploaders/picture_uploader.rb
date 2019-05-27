@@ -11,7 +11,7 @@ class PictureUploader < CarrierWave::Uploader::Base
     # obj.upload_file('/path/to/source/file')
 
     CarrierWave.configure do |config|
-      config.storage    = :aws
+      config.storage    = :fog
       config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
       config.aws_acl    = 'public-read'
       config.aws_authenticated_url_expiration = 60 * 60 * 24 * 7
@@ -22,8 +22,8 @@ class PictureUploader < CarrierWave::Uploader::Base
       }
     end
   # Choose what kind of storage to use for this uploader:
-  storage :aws
-  # storage :fog
+  # storage :aws
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
