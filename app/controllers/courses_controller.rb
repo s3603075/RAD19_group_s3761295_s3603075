@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   include ApplicationHelper
+  require 'aws-sdk-s3'
   # before_action :is_admin, only: [:new, :edit, :update, :destroy]
   # before_action :user_own_course, only: [:edit, :update]
 
@@ -52,6 +53,9 @@ class CoursesController < ApplicationController
       redirect_to root_path
       return
     end
+    s3 = Aws::S3::Resource.new(region:'ap-southeast-2')
+    obj = s3.bucket('course-app').object(params[:picture].original_filename)
+    obj.upload_file(params[:picture].original_filename)
     @course = Course.new(course_params)
     @course.user_id = current_user.id
 
