@@ -45,6 +45,10 @@ Rails.application.routes.draw do
   get '/admin/location_edit', to: 'admin#location'
 
   get '*unmatched_route', to: 'application#not_found'
+  
+  get '/likes/like', to: 'like#like'
+  
+  get '/likes/dislike', to: 'like#dislike'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
