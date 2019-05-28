@@ -46,9 +46,13 @@
   margin-top: 15px;
 }
 
-.container-form .checkbox {
-  margin-left: 40px;
-  margin-right: 100vh;
+.checkbox-container {
+  display: block;
+}
+.checkbox {
+  //display: inline-block;
+  margin-left: 30px;
+  margin-right: 55px;
 }
 
 .media-container .media {

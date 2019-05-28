@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   before_save { self.email = email.downcase }
   validates :name, presence: true
-  VALID_EMAIL_REGEX = /\A[\w]+\.[\w]+@rmit\.edu\.au\z|\Aadmin\z/i;
+  VALID_EMAIL_REGEX = /\A[\w]+\.[\w]+@rmit\.edu\.au\z/i;
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true

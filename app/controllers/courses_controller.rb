@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   include ApplicationHelper
+  require 'aws-sdk-s3'
   # before_action :is_admin, only: [:new, :edit, :update, :destroy]
   # before_action :user_own_course, only: [:edit, :update]
 
@@ -52,6 +53,7 @@ class CoursesController < ApplicationController
       redirect_to root_path
       return
     end
+
     @course = Course.new(course_params)
     @course.user_id = current_user.id
 
@@ -119,7 +121,7 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
-
+      # @picture = Course.find(params[:picture])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

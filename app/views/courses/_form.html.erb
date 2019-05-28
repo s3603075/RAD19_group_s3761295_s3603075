@@ -27,25 +27,27 @@
 
         <div class="checkbox-container">
           <b>Category: </b>
-          <div class="checkbox">
             <%= hidden_field_tag 'course[category_ids][]', nil %>
             <% Category.all.each do |category| %>
+            <div class="checkbox">
               <%= check_box_tag 'course[category_ids][]', category.id, @course.categories.include?(category) %>
               <%= category.category_name %>
+              </div>
             <% end %>
-          </div>
         </div>
 
 
         <div class="checkbox-container">
           <b>Location: </b>
-          <div class="checkbox">
+
             <%= hidden_field_tag "course[location_ids][]", nil %>
             <% Location.all.each do |location| %>
+            <div class="checkbox">
                 <%= check_box_tag "course[location_ids][]", location.id, @course.locations.include?(location) %>
                 <%= location.location_name%>
+            </div>
             <% end %>
-          </div>
+
         </div>
 
       <span class="picture">
