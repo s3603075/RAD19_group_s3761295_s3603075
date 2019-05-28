@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
   get '/admin/location_edit', to: 'admin#location'
   
+  get '/admin/resetvotes', to: 'admin#resetvotes'
+  
   get '/likes/like', to: 'like#like'
   
   get '/likes/dislike', to: 'like#dislike'
