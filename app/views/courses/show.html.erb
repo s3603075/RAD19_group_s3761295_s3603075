@@ -31,17 +31,25 @@
 
           <div class="thumbs-container">
 
-            <%= link_to like_course_path(@course), method: :put do %>
+            <%= link_to likes_like_path(:course => @course.id) do %>
             <span class="like">
               <button class="like-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-up"></i></button>
-              <%= @course.get_upvotes.size %>
+                <% if @course.liked.nil?  %>
+                  0
+                <% else %>
+                  <%= @course.liked %>
+                <% end %>
             </span>
             <% end %>
 
-            <%= link_to dislike_course_path(@course), method: :put do %>
+            <%= link_to likes_dislike_path(:course => @course.id) do %>
             <span class="dislike">
               <button class="dislike-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-down"></i></button>
-              <%= @course.get_downvotes.size %>
+                <% if @course.disliked.nil?  %>
+                  0
+                <% else %>
+                  <%= @course.disliked %>
+                <% end %>
              </span>
             <% end %>
           </div>

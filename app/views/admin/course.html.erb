@@ -38,17 +38,25 @@
 
           <div class="thumbs-container">
 
-            <%= link_to like_course_path(course_details), method: :put do %>
+            <%= link_to likes_like_path(:course => course_details.id) do %>
             <span class="like">
               <button class="like-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-up"></i></button>
-              <%= course_details.get_upvotes.size %>
+                <% if course_details.liked.nil?  %>
+                  0
+                <% else %>
+                  <%= course_details.liked %>
+                <% end %>
             </span>
             <% end %>
 
-            <%= link_to dislike_course_path(course_details), method: :put do %>
+            <%= link_to likes_dislike_path(:course => course_details.id) do %>
             <span class="dislike">
               <button class="dislike-button" style="border:none;background-color: transparent;"><i class="glyphicon glyphicon-thumbs-down"></i></button>
-              <%= course_details.get_downvotes.size %>
+                <% if course_details.disliked.nil?  %>
+                  0
+                <% else %>
+                  <%= course_details.disliked %>
+                <% end %>
              </span>
             <% end %>
           </div>
@@ -65,7 +73,7 @@
                         data: { confirm: 'Are you sure?' } %>
           </div>
           <div class="link btn btn-success">
-            Rest Votes
+            <%= link_to 'Reset Votes', admin_resetvotes_path(:course => course_details.id) %>
           </div>
         </div>
 
