@@ -14,7 +14,7 @@ class Course < ApplicationRecord
 
   mount_uploader :picture, PictureUploader
 
-  acts_as_votable
+  # acts_as_votable
 
   validate  :picture_size
 

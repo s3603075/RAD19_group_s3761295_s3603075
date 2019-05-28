@@ -50,9 +50,18 @@ Rails.application.routes.draw do
   
   get '/likes/dislike', to: 'like#dislike'
 
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: :show
+      resources :courses, only: :show
+      namespace :list do
+        resources :users, only: :index
+        resources :courses, only: :index
+      end
+   end
+  end
+
   get '*unmatched_route', to: 'application#not_found'
-  
- 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
