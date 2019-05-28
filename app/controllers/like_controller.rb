@@ -8,7 +8,11 @@ class LikeController < ApplicationController
       flash[:danger] = "You can only vote on a course once!"
     else
       @like = Like.create(user_id: current_user.id, course_id: @course.id)
-      likeds = @course.liked + 1
+      if @course.liked == nil
+        likeds = 1
+      else
+        likeds = @course.liked + 1
+      end
       @course.liked = likeds
       @course.save
     end
@@ -26,7 +30,11 @@ class LikeController < ApplicationController
       flash[:danger] = "You can only vote on a course once!"
     else
       @like = Like.create(user_id: current_user.id, course_id: @course.id)
-      dislikeds = @course.disliked + 1
+      if @course.disliked == nil
+        dislikeds = 1
+      else
+        dislikeds = @course.liked + 1
+      end
       @course.disliked = dislikeds
       @course.save
     end
